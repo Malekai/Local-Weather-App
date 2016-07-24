@@ -1,0 +1,52 @@
+body {
+	color: white;
+	background: black;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: roboto;
+}
+
+.display {
+	margin: 0 auto;
+	background: rgba(0,85,135,0.7);
+	width: 50%;
+	height: 75%;
+	text-align: center;
+	padding-top: 5px;
+	border-radius: 10px;
+	margin-bottom: 50%;
+}
+
+h1 {
+	line-height: 1px;
+	font-weight: normal;
+}
+
+#logo {
+	width: 150px;
+}
+
+li {
+	list-style-type: none;
+	margin: 0 0 10px 0;
+	font-size: 50px;
+}
+
+ul {
+	margin-top: 8%;
+	margin-right: 5%;
+}
+
+p:hover {
+	color: #fe00e3;
+	text-decoration: underline;
+}
+
+#icon {
+	width: 150px;
+}
+
+#message {
+	font-size: 15px;
+}
