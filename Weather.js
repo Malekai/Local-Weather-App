@@ -15,7 +15,7 @@ var rgbaVal = "rgba(0,85,135,0.7)";
 var time = new Date();
 time = time.toString().split(" ");
 time = time[4];
-var time = time.split(":");
+time = time.split(":");
 var firstDigit = time[0];
 
 //Get users location and update api link
@@ -66,63 +66,63 @@ function updateWeather(json) {
 
 //Change background and icons to match weather
 function updateStyles(json) {
-  if (['Overcast', 'Clear', 'Partly Cloudy', 'Mostly Cloudy', 
+  if (['Overcast', 'Clear', 'Partly Cloudy', 'Mostly Cloudy',
     'Scattered Clouds'].indexOf(json.current_observation) === -1) {
       if (firstDigit <= 06 || firstDigit >= 20) {
         icon = "images/icons/cloudy-night-icon.png";
-        bg = "images/backgrounds/nightBg.jpeg"; 
-        rgbaVal = "rgba(0,0,0,0.5)";      
-      } 
+        bg = "images/backgrounds/nightBg.jpeg";
+        rgbaVal = "rgba(0,0,0,0.5)";
+      }
       else {
       icon = "images/icons/partly-cloudy-day-icon.png";
       bg = "images/backgrounds/sunnyBg.jpeg";
       }
     updateDisplay(icon, bg, rgbaVal);
-  } 
-  else if (['Drizzle', 'Light Drizzle', 'Heavy Drizzle', 'Rain', 
-    'Heavy Rain', 'Light Rain', 'Rain Mist', 'Light Rain Mist', 
-    'Heavy Rain Mist', 'Rain Showers', 'Light Rain Showers', 
+  }
+  else if (['Drizzle', 'Light Drizzle', 'Heavy Drizzle', 'Rain',
+    'Heavy Rain', 'Light Rain', 'Rain Mist', 'Light Rain Mist',
+    'Heavy Rain Mist', 'Rain Showers', 'Light Rain Showers',
     'Heavy Rain Showers'].indexOf(json.current_observation) === -1) {
       if (firstDigit <= 06 || firstDigit >= 20) {
     icon = "images/icons/Night-rain-icon.png";
     bg = "images/backgrounds/rainNightBg.jpeg";
-        rgbaVal = "rgba(0,0,0,0.5)";      
-      } 
+        rgbaVal = "rgba(0,0,0,0.5)";
+      }
       else {
       icon = "images/icons/rain-icon.png";
       bg = "images/backgrounds/rainBg.jpeg";
       }
     updateDisplay(icon, bg, rgbaVal);
   }
-  else if (['Thunderstorm', 'Heavy ThunderStorm', 'Light Thunderstorm', 
+  else if (['Thunderstorm', 'Heavy ThunderStorm', 'Light Thunderstorm',
     'Thunderstorms and Rain', 'Heavy Thunderstorms and Rain', 'Light Thunderstorms and Rain',
     'Thunderstorms and Snow', 'Heavy Thunderstorms and Snow', 'Light Thunderstorms and Snow',
-    'Thunderstorms and Ice Pellets', 'Heavy Thunderstorms and Ice Pellets', 'Light Thunderstorms and Ice Pellets', 
+    'Thunderstorms and Ice Pellets', 'Heavy Thunderstorms and Ice Pellets', 'Light Thunderstorms and Ice Pellets',
     'Thunderstorms with Hail', 'Heavy Thunderstorms with Hail', 'Light Thunderstorms with Hail',
     'Thunderstorms with Small Hail', 'Heavy Thunderstorms with Small Hail', 'Light Thunderstorms with Small Hail',
     'Freezing Drizzle', 'Heavy Freezing Drizzle', 'Light Freezing Drizzle',
     'Freezing Rain', 'Heavy Freezing Rain', 'Light Freezing Rain'].indexOf(json.current_observation) === -1) {
     icon = "images/icons/thunder-icon.png";
     bg = "images/backgrounds/thunderBg.jpeg";
-    rgbaVal = "rgba(0,0,0,0.5)"; 
+    rgbaVal = "rgba(0,0,0,0.5)";
     updateDisplay(icon, bg, rgbaVal);
-  }  
-  else if (['Snow', 'Light Snow', 'Heavy Snow', 'Snow Grains', 
-    'Heavy Snow Grains', 'Light Snow Grains', 
-    'Ice Crystals', 'Light Ice Crystals', 'Heavy Ice Crystals', 
-    'Ice Pellets', 'Light Ice Pellets', 'Heavy Ice Pellets', 
-    'Hail', 'Light Hail', 'Heavy Hail', 'Snow Showers', 
-    'Light Snow Showers', 'Heavy Snow Showers', 'Blowing Snow', 'Heavy Blowing Snow', 'Light Blowing Snow', 
+  }
+  else if (['Snow', 'Light Snow', 'Heavy Snow', 'Snow Grains',
+    'Heavy Snow Grains', 'Light Snow Grains',
+    'Ice Crystals', 'Light Ice Crystals', 'Heavy Ice Crystals',
+    'Ice Pellets', 'Light Ice Pellets', 'Heavy Ice Pellets',
+    'Hail', 'Light Hail', 'Heavy Hail', 'Snow Showers',
+    'Light Snow Showers', 'Heavy Snow Showers', 'Blowing Snow', 'Heavy Blowing Snow', 'Light Blowing Snow',
     'Snow Blowing Snow Mist', 'Heavy Snow Blowing Snow Mist', 'Light Snow Blowing Snow Mist',
-    'Ice Pellet Showers', 'Heavy Ice Pellet Showers', 'Light Ice Pellet Showers', 
-    'Hail Showers', 'Heavy Hail Showers', 'Light Hail Showers', 
-    'Small Hail Showers', 'Light Small Hail Showers', 
+    'Ice Pellet Showers', 'Heavy Ice Pellet Showers', 'Light Ice Pellet Showers',
+    'Hail Showers', 'Heavy Hail Showers', 'Light Hail Showers',
+    'Small Hail Showers', 'Light Small Hail Showers',
     'Heavy Small Hail Showers'].indexOf(json.current_observation) === -1) {
       if (firstDigit <= 06 || firstDigit >= 20) {
         icon = "images/icons/Snow-night.png";
-        bg = "images/backgrounds/snowNightBg.jpeg"; 
-        rgbaVal = "rgba(0,0,0,0.5)";      
-      } 
+        bg = "images/backgrounds/snowNightBg.jpeg";
+        rgbaVal = "rgba(0,0,0,0.5)";
+      }
       else {
       icon = "images/icons/snow-icon.png";
       bg = "images/backgrounds/snowBg.jpeg";
@@ -137,4 +137,3 @@ function updateDisplay(icon, bg, rgbaVal) {
     $('body').css("background-image", "url(" + bg + ")");
     $('.display').css("background", "" + rgbaVal);
 }
-
